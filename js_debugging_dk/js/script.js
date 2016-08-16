@@ -12,40 +12,40 @@ var woolOwners = [
 ];
 
 
-var bags = haveYouAnyWool;
 
 var haveYouAnyWool = function() {
+    var totalBags = 0;
     for (var i = 0; i < woolOwners.length; i++) {
-    var totalBags = totalBags + i;
+      totalBags = totalBags + i;
     }
-    return (i);
+    return totalBags;
 };
 
+var bags = haveYouAnyWool();
 
 function baabaaBlackSheep() {
     console.log("BaaBaa BlackSheep have you any wool?");
     if (bags > 0) {
-        console.log("yes sir, yes sir " + totalBags + " bags full");
+        console.log("yes sir, yes sir " + bags + " bags full");
   }
 }
 
+baabaaBlackSheep();
+
 function oneForMy() {
+
+    var people;
+    // var person = people.toString();
+
     for (var i = 0; i < 2; i++) {
-        people = Object.keys(woolOwners);
-        var person = people.toString();
-        console.log("one for my " + person);
+        people = Object.keys(woolOwners[i]);
+        console.log("one for my " + people);
     }
 }
-
-baabaaBlackSheep();
 oneForMy();
 
-// can use a built-in method to access the woolOwner object's keys
 var boy = Object.keys(woolOwners[2]);
-// "little boy" is the first key, not the second
 var littleBoy = boy[0];
 
-// note: can't access via the "boy" or "litteBoy" variables here
-// need to access the "location" key's value directly from the woolOwners object
 var whereHeLives = woolOwners[2].location;
 console.log("one for the " + littleBoy + " that lives " + whereHeLives);
